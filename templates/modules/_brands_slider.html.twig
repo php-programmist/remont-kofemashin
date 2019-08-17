@@ -1,0 +1,23 @@
+<!--Шестой блок (БРЕНДЫ В СЛАЙДЕРЕ)-->
+<div class="block6">
+    <h2 class="zag1">Ремонтируемые бренды кофемашин</h2>
+    <div class="container">
+        <div class="brand-slider">
+
+            <div class="slide-wrap">
+                {% for brand in brands %}
+                <div class="slide-column">
+                    <a href="#">
+                        <img src="{{ asset('img/brand/'~brand.logo) }}" alt="{{ brand.name }}">
+                    </a>
+                </div>
+                {% if(loop.index % 4 == 0 ) %}
+            </div>
+            <div class="slide-wrap">
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<!--Конец ШЕСТОГО блока-->
