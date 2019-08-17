@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{% block title %}Главная{% endblock %}</title>
+    <title>{% block title %}Ремонт кофемашин{% endblock %}</title>
+    <meta name="description" content="{% block description %}Ремонт кофемашин{% endblock %} 🔥 цена от {% block description_price %}450{% endblock %}₽. ✅ Бесплатный выезд на дом и диагностика кофемашины. ✅ Любой район Москвы и области. ✅ Гарантия на ремонт до 2 лет.  ⭐ Сервисный центр «Ремонт Кофемашин» ☎ 8(925)406-13-10.">
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.min.css') }}">
@@ -16,8 +17,55 @@
 
 <body>
 {{ include('modules/_navigation.html.twig') }}
-{{ include('modules/_header_slider.html.twig') }}
 
+<!--первый блок со слайдером-->
+<div class="block1" id="anchor3">
+    <div class="wrapper">
+        <div class="container">
+            <div class="row ">
+                <div class="col-sm-6 col-4 logo">
+                    <img src="{{ asset('img/logo.png') }}" alt="1">
+                </div>
+                <div class="col-sm-6 col-8 phone text-right">
+                    <span><a href="tel:89254061310">8 (925) 406-13-10</a> </span>
+                    <span class="zakzv zakzv-btn">ЗАКАЗАТЬ ЗВОНОК</span>
+                    <span class="mail"><img src="{{ asset('img/email.png') }}" alt="email: "> rost-stroiy@mail.ru </span>
+
+                </div>
+                <div class="zag">
+                    <h1>{% block h1 %}Ремонт кофемашин{% endblock %} в Москве</h1>
+                </div>
+                <div class="offer">
+                    <div><span><img src="{{ asset('img/zernushko.png') }}" alt="*"> Бесплатный выезд и диагностика кофемашины.</span>
+                    </div>
+                    <div><span><img src="{{ asset('img/zernushko.png') }}" alt="*"> Любой район Москвы и Московской области.</span>
+                    </div>
+                    <div><span><img src="{{ asset('img/zernushko.png') }}" alt="*"> Гарантия на ремонт до 2 лет</span></div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="slider">
+        <ul class="slides">
+            <li class="slide foto-1">
+                <div class="box" style="">
+                </div>
+            </li>
+            <li class="slide foto-2">
+                <div class="box" style="">
+                </div>
+            </li>
+            <li class="slide foto-3">
+                <div class="box" style="">
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--конец Перв блок -->
 {% block body %}
 
 {% endblock %}

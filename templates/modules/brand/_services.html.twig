@@ -1,0 +1,35 @@
+<!-- Второй блок (Услуги и цены) блок -->
+<div class="block2">
+    <div class="container-fluid">
+        <div class="zag1">Услуги и цены</div>
+        <div class="zag2">Цены по неисправностям</div>
+        <div class="row">
+            {% for breakdown in breakdowns %}
+            <div class="col-xl-4 col-md-6">
+                <div class="usl">
+                    <div class="f-l"><a href="{{ path('model_or_service',{'brand':brand.alias,'model_or_service':breakdown.alias}) }}">{{ breakdown.name }}</a></div>
+                    <div class="f-r">
+                        <div class="price">от {{ breakdown.price }} <sup>руб</sup></div>
+                        <a class="btn btn-success zakzv-btn" href="#">Заказать</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="zag2">ЦЕНЫ ПО УСЛУГАМ</div>
+        <div class="row">
+            {% for service in services %}
+                <div class="col-xl-4 col-md-6">
+                    <div class="usl">
+                        <div class="f-l"><a href="{{ path('model_or_service',{'brand':brand.alias,'model_or_service':service.alias}) }}">{{ service.name }}</a></div>
+                        <div class="f-r">
+                            <div class="price">от {{ service.price }} <sup>руб</sup></div>
+                            <a class="btn btn-success zakzv-btn" href="#">Заказать</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!--Конец второго блока-->

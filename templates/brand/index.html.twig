@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ремонт кофемашин {{ brand.name }} по низкой цене в Москве - «Ремонт Кофемашин»{% endblock %}
+{% block description %}Ремонт кофемашин {{ brand.name }}.{% endblock %}
+{% block h1 %}Ремонт кофемашин {{ brand.name }}{% endblock %}
+
+{% block body %}
+{{ include('modules/brand/_product_card.html.twig') }}
+{{ include('modules/brand/_services.html.twig') }}
+{{ include('modules/_advantages.html.twig') }}
+{{ include('modules/_calc_price_modal_window.html.twig') }}
+{% endblock %}
