@@ -63,6 +63,11 @@ class Brand
      */
     private $logo;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $text;
+
     public function __construct()
     {
         $this->models = new ArrayCollection();
@@ -196,6 +201,18 @@ class Brand
     public function setLogo(?string $logo): self
     {
         $this->logo = $logo;
+
+        return $this;
+    }
+
+    public function getText(): ?string
+    {
+        return $this->text;
+    }
+
+    public function setText(?string $text): self
+    {
+        $this->text = $text;
 
         return $this;
     }
