@@ -51,6 +51,11 @@ class Service
      */
     private $meta_key_words;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $alias;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -136,6 +141,18 @@ class Service
     public function setMetaKeyWords(?string $meta_key_words): self
     {
         $this->meta_key_words = $meta_key_words;
+
+        return $this;
+    }
+
+    public function getAlias(): ?string
+    {
+        return $this->alias;
+    }
+
+    public function setAlias(string $alias): self
+    {
+        $this->alias = $alias;
 
         return $this;
     }

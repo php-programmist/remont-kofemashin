@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Brand;
 use App\Entity\Model;
+use App\Entity\Service;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -100,6 +101,36 @@ class ImporterController extends AbstractController
                 $em->persist($model_entity);
             }
             
+        }
+        $em->flush();
+        echo 'ok';
+        exit();
+    }
+    
+    /**
+     * @Route("/service", name="service")
+     */
+    public function service()
+    {
+        exit();
+        $em = $this->getDoctrine()->getManager();
+        $project_dir = $this->getParameter('kernel.project_dir');
+    
+        $inputFileName = $project_dir.'/import_data/services.xlsx';
+        $reader = new Xlsx();
+        $reader->setReadDataOnly(true);
+        $spreadsheet = $reader->load($inputFileName);
+        $worksheet = $spreadsheet->getActiveSheet();
+        $cells = $worksheet->getCellCollection();
+        
+        for($row =2;$row<=29;$row++){
+            $service_entity = new Service();
+            $service_entity->setName($cells->get('D'.$row)->getValue());
+            $service_entity->setAlias($cells->get('C'.$row)->getValue());
+            $service_entity->setSeoName($cells->get('A'.$row)->getValue());
+            $service_entity->setPrice($cells->get('B'.$row)->getValue());
+            $service_entity->setIsService($cells->get('E'.$row)->getValue());
+            $em->persist($service_entity);
         }
         $em->flush();
         echo 'ok';
