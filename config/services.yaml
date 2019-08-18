@@ -4,7 +4,8 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-
+  locale: 'ru'
+  mailer_user: 'php.programmist.ru@gmail.com'
 services:
     # default configuration for services in *this* file
     _defaults:
@@ -25,3 +26,19 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    admin.brand:
+        class: App\Admin\BrandAdmin
+        arguments: [~, App\Entity\Brand, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Контент', label: 'Бренды' }
+    admin.model:
+        class: App\Admin\ModelAdmin
+        arguments: [~, App\Entity\Model, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Контент', label: 'Модели' }
+    admin.service:
+        class: App\Admin\ServiceAdmin
+        arguments: [~, App\Entity\Service, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Контент', label: 'Услуги' }
