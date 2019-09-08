@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Диагностика кофемашин - «Ремонт Кофемашин»{% endblock %}
+{% block description %}Диагностика кофемашин.{% endblock %}
+{% block h1 %}Диагностика кофемашин{% endblock %}
+
+{% block body %}
+    <div class="block2">
+        <div class="container-fluid">
+            {{ include('modules/main/_diagnostics.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

@@ -12,9 +12,22 @@ use Symfony\Component\Routing\Annotation\Route;
 class BrandController extends AbstractController
 {
     /**
+     * @Route("/obsluzhivaem-brendy/", name="brands_index")
+     */
+    public function index( BrandRepository $brand_repository)
+    {
+    
+        $brands = $brand_repository->findAll();
+        
+        return $this->render('brand/list.html.twig', [
+            'brands' => $brands
+        ]);
+    }
+    
+    /**
      * @Route("/remont-kofemashin-{brand}/", name="brand")
      */
-    public function index($brand, BrandRepository $brand_repository, ServiceRepository $service_repository)
+    public function item($brand, BrandRepository $brand_repository, ServiceRepository $service_repository)
     {
         if ( ! $brand_entity = $brand_repository->findOneBy(['alias' => $brand])) {
             throw new NotFoundHttpException();

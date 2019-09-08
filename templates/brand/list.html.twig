@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Обслуживаемые бренды кофемашин - «Ремонт Кофемашин»{% endblock %}
+{% block description %}Обслуживаемые бренды кофемашин.{% endblock %}
+{% block h1 %}Обслуживаемые бренды кофемашин{% endblock %}
+
+{% block body %}
+{{ include('modules/_brands_slider.html.twig') }}
+{{ include('modules/_advantages.html.twig') }}
+{{ include('modules/_calc_price_modal_window.html.twig') }}
+{% endblock %}

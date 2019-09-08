@@ -24,4 +24,32 @@ class PageController extends AbstractController
             'services'   => $services,
         ]);
     }
+    
+    /**
+     * @Route("/price-list/", name="price-list")
+     */
+    public function price_list(ServiceRepository $service_repository)
+    {
+        $breakdowns = $service_repository->findBy(['is_service' => false]);
+        $services   = $service_repository->findBy(['is_service' => true]);
+        
+        return $this->render('page/price-list.html.twig', [
+            'breakdowns' => $breakdowns,
+            'services'   => $services,
+        ]);
+    }
+    /**
+     * @Route("/garantiya/", name="garantiya")
+     */
+    public function garantiya()
+    {
+        return $this->render('page/garantiya.html.twig');
+    }
+    /**
+     * @Route("/kontakty/", name="contacts")
+     */
+    public function contacts()
+    {
+        return $this->render('page/contacts.html.twig');
+    }
 }

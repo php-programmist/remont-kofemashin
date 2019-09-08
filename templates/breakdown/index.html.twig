@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Неисправности кофемашин - «Ремонт Кофемашин»{% endblock %}
+{% block description %}Неисправности кофемашин.{% endblock %}
+{% block h1 %}Неисправности кофемашин{% endblock %}
+
+{% block body %}
+    <div class="block2">
+        <div class="container-fluid">
+            {{ include('modules/main/_breakdowns.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

@@ -6,11 +6,11 @@
                 <div class="col-lg-3 col-md-4 col-sm-6"><a href="#"><img src="{{ asset('img/logo.png') }}" alt="*"></a></div>
                 <div class="col-lg-3 col-md-4 col-sm-6 dn570">
                     <a href="#" class="zag2">ПОПУЛЯРНЫЕ <br>НЕИСПРАВНОСТИ</a>
-                    <a href="#">Не запускается</a>
-                    <a href="#">Нет подачи воды</a>
-                    <a href="#">Не измельчает кофе</a>
-                    <a href="#">Плохая подача кофе</a>
-                    <a href="#">Не нагревает воду</a>
+                    <a href="{{ path('breakdown_item',{'breakdown':'ne-zapuskaetsya-kofemashina'}) }}">Не запускается</a>
+                    <a href="{{ path('breakdown_item',{'breakdown':'net-podachi-vody-kofemashina'}) }}">Нет подачи воды</a>
+                    <a href="{{ path('breakdown_item',{'breakdown':'ne-izmelchaet-kofe-kofemashina'}) }}">Не измельчает кофе</a>
+                    <a href="{{ path('breakdown_item',{'breakdown':'plohaya-podacha-kofe-kofemashina'}) }}">Плохая подача кофе</a>
+                    <a href="{{ path('breakdown_item',{'breakdown':'ne-nagrevaet-vodu-kofemashina'}) }}">Не нагревает воду</a>
                 </div>
                 <div class="col-lg-3 col-md-4 dn760">
                     <a href="javascript:void(0)" class="zag2">ТОПОВЫЕ БРЕНДЫ</a>

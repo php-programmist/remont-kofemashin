@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="block-uslugi">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="uslugi-form">
+                        <span class="zag2">Заказать звонок</span>
+                        <p>Если Вам необходим ремонт кофемашины, заполните поле ниже и мы Вам перезвоним в течении 5 минут для согласования всех предоставляемых услуг.</p>
+                        {{ include('modules/callback_form.html.twig') }}
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="uslugi-osn">
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{ include('modules/_advantages.html.twig') }}
+    {{ include('modules/_calc_price_modal_window.html.twig') }}
+{% endblock %}
+

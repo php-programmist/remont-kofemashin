@@ -1,0 +1,14 @@
+<div class="zag2">Цены по неисправностям</div>
+<div class="row">
+    {% for breakdown in breakdowns %}
+        <div class="col-xl-4 col-md-6">
+            <div class="usl">
+                <div class="f-l"><a href="{{ path('breakdown_item',{'breakdown':breakdown.alias}) }}">{{ breakdown.name }}</a></div>
+                <div class="f-r">
+                    <div class="price">от {{ breakdown.price }} <sup>руб</sup></div>
+                    <a class="btn btn-success zakzv-btn" href="#">Заказать</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

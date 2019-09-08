@@ -4,12 +4,12 @@
         <div class="k_nav">
             <span class="burger"><img src="{{ asset('img/menu.png') }}" alt=""></span>
             <ul class="grmenu">
-                <li><a href="#">Прайс лист</a></li>
-                <li><a href="#">Неисправности</a></li>
-                <li><a href="#">Обслуживаем бренды</a></li>
-                <li><a href="#">Диагностика</a></li>
-                <li><a href="#">Гарантия</a></li>
-                <li><a href="#">Контакты</a></li>
+                <li><a href="{{ path('price-list') }}">Прайс лист</a></li>
+                <li><a href="{{ path('breakdown_index') }}">Неисправности</a></li>
+                <li><a href="{{ path('brands_index') }}">Обслуживаем бренды</a></li>
+                <li><a href="{{ path('diagnostics_index') }}">Диагностика</a></li>
+                <li><a href="{{ path('garantiya') }}">Гарантия</a></li>
+                <li><a href="{{ path('contacts') }}">Контакты</a></li>
             </ul>
         </div>
     </div>

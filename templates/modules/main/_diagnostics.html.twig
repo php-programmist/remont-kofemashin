@@ -1,0 +1,14 @@
+<div class="zag2">ЦЕНЫ ПО УСЛУГАМ</div>
+<div class="row">
+    {% for service in services %}
+        <div class="col-xl-4 col-md-6">
+            <div class="usl">
+                <div class="f-l"><a href="{{ path('diagnostics_item',{'service':service.alias}) }}">{{ service.name }}</a></div>
+                <div class="f-r">
+                    <div class="price">от {{ service.price }} <sup>руб</sup></div>
+                    <a class="btn btn-success zakzv-btn" href="#">Заказать</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
