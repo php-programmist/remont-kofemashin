@@ -3,30 +3,17 @@
     <div class="container">
         <h2 class="zag1">Виды кофемашин</h2>
         <div class="row">
+            {% for type in types %}
             <div class="col-lg-3 col-sm-6 vidi">
                 <div class="img-wrap">
-                    <img src="{{ asset('img/avtomaticheskie.png') }}" alt="*">
+                    <a href="{{ path('type',{type:type.alias}) }}">
+                        <img src="{{ asset('img/type_images/'~type.image) }}" alt="{{ type.name }}">
+                    </a>
                 </div>
-                <span>Автоматические<br> кофемашины</span>
+                <span>{{ type.name }}</span>
             </div>
-            <div class="col-lg-3 col-sm-6 vidi">
-                <div class="img-wrap">
-                    <img src="{{ asset('img/kapsulnue.png') }}" alt="*">
-                </div>
-                <span>Капсульные <br> кофемашины</span>
-            </div>
-            <div class="col-lg-3 col-sm-6 vidi">
-                <div class="img-wrap">
-                    <img src="{{ asset('img/chaldovue.png') }}" alt="*">
-                </div>
-                <span>Чалдовые (порционные) <br> кофемашины</span>
-            </div>
-            <div class="col-lg-3 col-sm-6 vidi">
-                <div class="img-wrap">
-                    <img src="{{ asset('img/rozkovue.png') }}" alt="*">
-                </div>
-                <span>Рожковые <br>кофемашины</span>
-            </div>
+            {% endfor %}
+
         </div>
     </div>
 </div>

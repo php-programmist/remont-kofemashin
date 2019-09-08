@@ -42,3 +42,8 @@ services:
         arguments: [~, App\Entity\Service, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, group: 'Контент', label: 'Услуги' }
+    type.service:
+        class: App\Admin\TypeAdmin
+        arguments: [~, App\Entity\Type, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Контент', label: 'Тип' }
