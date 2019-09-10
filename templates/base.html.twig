@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/media.css') }}">
     {% endblock %}
+    {{ include('modules/scripts/_ymetrics.html.twig') }}
 </head>
 
 <body>
@@ -27,9 +28,9 @@
                     <img src="{{ asset('img/logo.png') }}" alt="1">
                 </div>
                 <div class="col-sm-6 col-8 phone text-right">
-                    <span><a href="tel:89254061310">8 (925) 406-13-10</a> </span>
+                    <span><a href="tel:84950156098">8 (495) 015-60-98</a> </span>
                     <span class="zakzv zakzv-btn">ЗАКАЗАТЬ ЗВОНОК</span>
-                    <span class="mail"><img src="{{ asset('img/email.png') }}" alt="email: "> rost-stroiy@mail.ru </span>
+                    <span class="mail"><img src="{{ asset('img/email.png') }}" alt="email: "> remont-kofemahin@mail.ru </span>
 
                 </div>
                 <div class="zag">
@@ -72,6 +73,8 @@
 
 {{ include('modules/_fotter.html.twig') }}
 {{ include('modules/_modal_window_callback.html.twig') }}
+{{ include('modules/_whatsapp_button.html.twig') }}
+{{ include('modules/scripts/_redhelper.html.twig') }}
 
 {% block javascripts %}
     <script src="{{ asset('js/jquery.min.js') }}"></script>
