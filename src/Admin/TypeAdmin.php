@@ -16,7 +16,7 @@ final class TypeAdmin extends AbstractAdmin
                    ->add('metaTitle', TextType::class,['label'=>'Мета заголовок'])
                    ->add('alias', TextType::class,['label'=>'Псевдоним'])
                    ->add('image', TextType::class,['label'=>'Изображение'])
-                   ->add('text', TextType::class,['label'=>'Текст']);
+                   ->add('text', null,['label'=>'Текст']);
     }
     
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

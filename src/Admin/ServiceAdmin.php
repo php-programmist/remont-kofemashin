@@ -17,7 +17,8 @@ final class ServiceAdmin extends AbstractAdmin
                    ->add('alias', TextType::class, ['label' => 'Псевдоним'])
                    ->add('seo_name', TextType::class, ['label' => 'Название для SEO'])
                    ->add('price', null, ['label' => 'Цена'])
-                   ->add('is_service', null, ['label' => 'Услуга?']);
+                   ->add('is_service', null, ['label' => 'Услуга?'])
+                   ->add('text', null, ['label' => 'Текст']);
     }
     
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

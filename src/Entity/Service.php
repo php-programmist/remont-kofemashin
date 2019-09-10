@@ -56,6 +56,11 @@ class Service
      */
     private $alias;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $text;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -153,6 +158,18 @@ class Service
     public function setAlias(string $alias): self
     {
         $this->alias = $alias;
+
+        return $this;
+    }
+
+    public function getText(): ?string
+    {
+        return $this->text;
+    }
+
+    public function setText(?string $text): self
+    {
+        $this->text = $text;
 
         return $this;
     }
