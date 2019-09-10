@@ -7,6 +7,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 final class ServiceAdmin extends AbstractAdmin
@@ -18,7 +19,7 @@ final class ServiceAdmin extends AbstractAdmin
                    ->add('seo_name', TextType::class, ['label' => 'Название для SEO'])
                    ->add('price', null, ['label' => 'Цена'])
                    ->add('is_service', null, ['label' => 'Услуга?'])
-                   ->add('text', null, ['label' => 'Текст']);
+                   ->add('text', TextareaType::class, ['label' => 'Текст']);
     }
     
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

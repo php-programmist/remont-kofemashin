@@ -6,6 +6,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 final class TypeAdmin extends AbstractAdmin
@@ -16,7 +17,7 @@ final class TypeAdmin extends AbstractAdmin
                    ->add('metaTitle', TextType::class,['label'=>'Мета заголовок'])
                    ->add('alias', TextType::class,['label'=>'Псевдоним'])
                    ->add('image', TextType::class,['label'=>'Изображение'])
-                   ->add('text', null,['label'=>'Текст']);
+                   ->add('text', TextareaType::class,['label'=>'Текст']);
     }
     
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
