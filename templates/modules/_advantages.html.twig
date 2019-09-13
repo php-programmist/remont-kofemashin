@@ -14,7 +14,7 @@
                     <div class="preim preim1">
                         <div class="preim-img"><img src="{{ asset('img/bustrui-remont.png') }}" alt="*"></div>
                         <div class="preim-zag">Быстрый ремонт</div>
-                        <div class="preim-text">Максимально быстро выполняем ремонт кофемашины</div>
+                        <div class="preim-text">Максимально быстро выполняем ремонт кофемашины {{ brand is defined ? brand.name }} {{ model is defined ? model.name }}</div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6">
@@ -28,7 +28,7 @@
                     <div class="preim preim1">
                         <div class="preim-img"><img src="{{ asset('img/diagnostika.png') }}" alt="*"></div>
                         <div class="preim-zag">Бесплатная диагностика</div>
-                        <div class="preim-text">Диагностика кофемашины совершенно бесплатно</div>
+                        <div class="preim-text">Диагностика кофемашины {{ brand is defined ? brand.name }} {{ model is defined ? model.name }} совершенно бесплатно</div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6">
@@ -63,7 +63,7 @@
                     <div class="preim preim1">
                         <div class="preim-img"><img src="{{ asset('img/cena.png') }}" alt="*"></div>
                         <div class="preim-zag">Низкая стоимость</div>
-                        <div class="preim-text">Цены на ремонт кофемашин ниже, чем у конкурентов.</div>
+                        <div class="preim-text">Цены на ремонт кофемашин {{ brand is defined ? brand.name }} {{ model is defined ? model.name }} ниже, чем у конкурентов.</div>
                     </div>
                 </div>
             </div>

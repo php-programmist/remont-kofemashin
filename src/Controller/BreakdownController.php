@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\ServiceRepository;
+use App\Service\MarkerReplaceService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
@@ -26,13 +27,14 @@ class BreakdownController extends AbstractController
      */
     public function item(
         $breakdown,
-        ServiceRepository $service_repository
+        ServiceRepository $service_repository,
+        MarkerReplaceService $marker_replace_service
     ) {
-        if ( ! $service = $service_repository->findOneBy(['alias' => $breakdown])) {
+        if ( ! $service_entity = $service_repository->findOneBy(['alias' => $breakdown])) {
             throw new NotFoundHttpException();
         }
         return $this->render('breakdown/item.html.twig', [
-            'service' => $service,
+            'service' => $marker_replace_service->replaceMarkerBrandInOneService($service_entity, ''),
         ]);
     }
     

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\TypeRepository;
 use App\Repository\ServiceRepository;
+use App\Service\MarkerReplaceService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
@@ -36,7 +37,8 @@ class TypeController extends AbstractController
         $type,
         $service,
         TypeRepository $type_repository,
-        ServiceRepository $service_repository
+        ServiceRepository $service_repository,
+        MarkerReplaceService $marker_replace_service
     ) {
         if ( ! $type_entity = $type_repository->findOneBy(['alias' => $type])) {
             throw new NotFoundHttpException();
@@ -46,7 +48,7 @@ class TypeController extends AbstractController
         if ($service_entity = $service_repository->findOneBy(['alias' => $service])) {
             return $this->render('type/service.html.twig', [
                 'type' => $type_entity,
-                'service' => $service_entity,
+                'service' => $marker_replace_service->replaceMarkerBrandInOneService($service_entity, ''),
                 'breakdowns' => $breakdowns,
                 'services' => $services,
             ]);

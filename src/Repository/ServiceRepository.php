@@ -18,7 +18,31 @@ class ServiceRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Service::class);
     }
-
+    
+    /**
+     * @param array $ids
+     * @param null  $isService
+     *
+     * @return Service[] Returns an array of Service objects
+     */
+    
+    public function findAllButExcluded(array $ids, $isService = null)
+    {
+        if (empty($ids)) {
+            return $this->findAll();
+        }
+        $query = $this->createQueryBuilder('s')
+                      ->andWhere('s.id NOT IN (' . implode(',', $ids) . ')')
+                      ->orderBy('s.id', 'ASC');
+        if ($isService !== null) {
+            $query->andWhere('s.is_service = :is_service')
+                  ->setParameter('is_service', (bool)$isService);
+        }
+        
+        return $query->getQuery()
+                     ->getResult();
+    }
+    
     // /**
     //  * @return Service[] Returns an array of Service objects
     //  */
@@ -35,7 +59,7 @@ class ServiceRepository extends ServiceEntityRepository
         ;
     }
     */
-
+    
     /*
     public function findOneBySomeField($value): ?Service
     {

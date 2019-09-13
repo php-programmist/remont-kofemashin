@@ -142,7 +142,7 @@ class ImporterController extends AbstractController
      */
     public function services_text(ServiceRepository $service_repository)
     {
-        exit();
+        
         $em = $this->getDoctrine()->getManager();
         $project_dir = $this->getParameter('kernel.project_dir');
     
@@ -151,10 +151,14 @@ class ImporterController extends AbstractController
         
         
         foreach($data as $row){
-            $service_entity = $service_repository->findOneBy(['seo_name'=>$row->title]);
+            $title_for_search = str_replace(' Bosch','',$row->task);
+            $service_entity = $service_repository->findOneBy(['seo_name'=>trim($title_for_search)]);
             if (!$service_entity) {
-                dd($row->title);
+                dd($title_for_search);
             }
+            $row->title = str_replace(' Bosch',' #BRAND',$row->title);
+            $row->data = str_replace(' Bosch',' #BRAND',$row->data);
+            $service_entity->setSeoName($row->title);
             $service_entity->setText($row->data);
             $em->persist($service_entity);
         }

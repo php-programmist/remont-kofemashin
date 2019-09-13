@@ -2,7 +2,7 @@
 <div class="block2">
     <div class="container-fluid">
         <div class="zag1">Услуги и цены</div>
-        <div class="zag2">Цены по неисправностям</div>
+        <div class="zag2">Цены по неисправностям кофемашины {{ brand.name }} {{ model is defined ? model.name }}</div>
         <div class="row">
             {% for breakdown in breakdowns %}
             <div class="col-xl-4 col-md-6">
@@ -16,7 +16,7 @@
             </div>
             {% endfor %}
         </div>
-        <div class="zag2">ЦЕНЫ ПО УСЛУГАМ</div>
+        <div class="zag2">Цены на ремонт кофемашины {{ brand.name }} {{ model is defined ? model.name }}</div>
         <div class="row">
             {% for service in services %}
                 <div class="col-xl-4 col-md-6">
