@@ -16,6 +16,7 @@
             </div>
             {% endfor %}
         </div>
+        {{ include('modules/_whatsapp_block.html.twig') }}
         <div class="zag2">Цены на ремонт кофемашины {{ brand.name }} {{ model is defined ? model.name }}</div>
         <div class="row">
             {% for service in services %}

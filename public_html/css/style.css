@@ -752,3 +752,48 @@ input:hover {
   opacity: .95;
   cursor: pointer;
 }
+.whatsappblock {
+  background: url(../img/whatsapp/wt-bg.png) center no-repeat;
+  background-size: cover;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  margin-top: 250px;
+}
+.whatsappblock .container2 {
+  max-width: 1500px;
+}
+.whatsappblock .wt3d a {
+  position: relative;
+}
+.whatsappblock .wt3d a .wtphone {
+  width: 300px;
+  position: absolute;
+  left: 200px;
+  bottom: -125px;
+}
+.whatsappblock .wt3d img {
+  width: 130px;
+}
+.whatsappblock .wtbtn a {
+  -webkit-box-shadow: -24px 14px 36px rgba(0, 1, 1, 0.75);
+  box-shadow: -24px 14px 36px rgba(0, 1, 1, 0.75);
+  border: 8px solid #fde3ad;
+  border-radius: 20px;
+  display: block;
+  background-color: #fff9e6;
+  width: 350px;
+  text-align: center;
+  color: #5e1a11;
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: auto;
+}
+.whatsappblock .wtbtn a b {
+  color: #2b0000;
+  font-size: 24px;
+  line-height: 1;
+}
