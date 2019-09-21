@@ -4,7 +4,7 @@
         {% if(service.isService) %}
             {{ service.seoName }}  по низкой цене в Москве - «Ремонт Кофемашин»
         {% else %}
-            {{ service.name }} {{ brand.name }} - «Ремонт Кофемашин»
+            {{ service.seoName }} - «Ремонт Кофемашин»
         {% endif %}
     {% endblock %}
 
@@ -20,9 +20,9 @@
 
     {% block h1 %}
         {% if(service.isService) %}
-            {{ service.seoName }}
+            {{ service.seoName }} в Москве
         {% else %}
-            {{ service.name }} {{ brand.name }}
+            {{ service.seoName }}
         {% endif %}
     {% endblock %}
     {% block description_repair %}{{ service.isService == 0 ? 'ремонта' }}{% endblock %}
