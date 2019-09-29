@@ -1,20 +1,8 @@
 {% extends 'page_with_callback_form.html.twig' %}
 
-    {% block title %}
-        {% if(service.isService) %}
-            {{ service.seoName }}  по низкой цене в Москве - «Ремонт Кофемашин»
-        {% else %}
-            {{ service.seoName }} - «Ремонт Кофемашин»
-        {% endif %}
-    {% endblock %}
+    {% block title %}{{ service.seoName }} {{ service.isService ? 'по низкой цене в Москве - «Ремонт Кофемашин»':'- «Ремонт Кофемашин»' }}{% endblock %}
 
-    {% block description %}
-        {% if(service.isService) %}
-            {{ service.seoName }}.
-        {% else %}
-            {{ service.seoName }}.
-        {% endif %}
-    {% endblock %}
+    {% block description %}{{ service.seoName }}.{% endblock %}
 
     {% block description_price %}{{ service.price }}{% endblock %}
 
