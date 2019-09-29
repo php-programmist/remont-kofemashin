@@ -55,6 +55,13 @@
     .k_header .k_menu .burger {
         display: block;
     }
+    .k_header .k_menu .mobile-phone {
+        display: block;
+    }
+    .k_header .k_menu .k_nav{
+        display: flex;
+        justify-content: space-between;
+    }
     .k_header .k_menu .k_nav .grmenu {
         max-width: 100%;
         height: 100vh;

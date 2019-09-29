@@ -165,6 +165,12 @@ input:hover {
   width: 50px;
   display: none;
 }
+.k_header .k_menu .mobile-phone {
+  display: none;
+  padding: 15px;
+  color: white;
+  font-size: 1.5em;
+}
 .burger img {
   max-width: 30px;
 }
