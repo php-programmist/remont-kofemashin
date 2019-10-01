@@ -1,0 +1,27 @@
+<yml_catalog date="{{ date }}" data-livestyle-extension="available">
+    <shop>
+        <name>remont-kofemashin.com</name>
+        <company>remont-kofemashin.com</company>
+        <url>https://remont-kofemashin.com/</url>
+        <currencies>
+            <currency id="RUR" rate="1" />
+        </currencies>
+        <categories>
+            <category id="1">Товары в наличии</category>
+        </categories>
+        <offers>
+{% for offer in offers %}
+                <offer id="{{ offer.id }}" available="true">
+                    <url>{{ offer.url }}</url>
+                    <price>{{ offer.price }}</price>
+                    <currencyId>RUR</currencyId>
+                    <categoryId>1</categoryId>
+                    <picture>{{ offer.picture }}</picture>
+                    <delivery>true</delivery>
+                    <name>{{ offer.name }}</name>
+                    <description>{{ offer.description }}</description>
+                </offer>
+{% endfor %}
+        </offers>
+    </shop>
+</yml_catalog>
