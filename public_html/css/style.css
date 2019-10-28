@@ -806,3 +806,32 @@ input:hover {
 .red_border{
   border: solid 2px red!important;
 }
+.bold{
+  font-weight: bold;
+}
+.italic{
+  font-style: italic;
+}
+.underline{
+  text-decoration: underline;
+}
+.red{
+  color: red;
+}
+.larger{
+  font-size: 130%;
+}
+.list-disc li{
+  list-style: disc;
+  margin-left: 1em;
+}
+.list-disc li ul li{
+  list-style: circle;
+}
+.commercial-offer p{
+  text-indent: 2em;
+  text-align: justify;
+}
+.commercial-offer h2{
+  margin-top: 1em;
+}

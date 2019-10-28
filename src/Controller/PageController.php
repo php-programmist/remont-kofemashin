@@ -55,4 +55,11 @@ class PageController extends AbstractController
     {
         return $this->render('page/contacts.html.twig');
     }
+    /**
+     * @Route("/commercial-offer/", name="commercial_offer")
+     */
+    public function commercial_offer()
+    {
+        return $this->render('page/commercial_offer.html.twig');
+    }
 }
