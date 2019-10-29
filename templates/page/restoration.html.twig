@@ -1,0 +1,24 @@
+{% extends 'page_with_callback_form.html.twig' %}
+
+{% block title %}Реставрация кофемашин по низкой цене в Москве - «Ремонт Кофемашин»{% endblock %}
+{% block description %}Реставрация кофемашин{% endblock %}
+{% block description_price %}2000{% endblock %}
+{% block h1 %}Реставрация кофемашин в Москве{% endblock %}
+
+{% block content %}
+    <h2>Реставрация кофемашин</h2>
+    <img src="{{ asset('img/restavration.jpg') }}" alt="">
+    <div class="cena-wrap">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="greytext">Цена</span>
+                <div class="cena"><span> от 2000 <sup>руб</sup></span></div>
+            </div>
+            <div class="col-md-8">
+                <div class="btn-wrap"><button class="btn1 btn-vizovbespldiagn">Бесплатная диагностика</button></div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

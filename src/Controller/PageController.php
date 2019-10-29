@@ -62,4 +62,11 @@ class PageController extends AbstractController
     {
         return $this->render('page/commercial_offer.html.twig');
     }
+    /**
+     * @Route("/restoration/", name="restoration")
+     */
+    public function restoration()
+    {
+        return $this->render('page/restoration.html.twig');
+    }
 }
