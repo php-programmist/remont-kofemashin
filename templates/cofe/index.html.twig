@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Купить кофе {{ item.name }} по низкой цене в Москве - «Ремонт Кофемашин»{% endblock %}
+{% block description %}Купить кофе {{ item.name }} по низкой цене в Москве.{% endblock %}
+{% block h1 %}Купить кофе {{ item.name }} по низкой цене в Москве{% endblock %}
+
+{% block body %}
+    <div class="cartochkabrenda">
+        <div class="container">
+            <div class="cartochkabrenda-container">
+                <div class="row">
+                    <div class="col-lg-5  cartochkabrenda-img">
+                        <img src="{{ asset('img/cofe/'~item.image) }}" alt="{{ item.name }}">
+                    </div>
+                    <div class="col-lg-7  cartochkabrenda-text">
+                        <div class="zag2">{{ item.name }}</div>
+                        {{ item.description|raw }}
+                        <button class="btn btn-vizovbespldiagn zakzv-btn">Заказать</button>
+                        <button class="btn btn-vizovbespldiagn zakzv-btn">Получить консультацию</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

@@ -835,3 +835,11 @@ input:hover {
 .commercial-offer h2{
   margin-top: 1em;
 }
+.btn-success{
+  color: #ffffff;
+  background-color: #7e472f;
+  border-color: #7e472f;
+}
+.btn-success:hover{
+  background-color: #7e472f;
+}
