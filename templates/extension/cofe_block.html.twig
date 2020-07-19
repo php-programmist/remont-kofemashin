@@ -9,6 +9,9 @@
                                 <img src="{{ asset('img/cofe/'~item.image) }}" alt="{{ item.name }}">
                             </div>
                         </a>
+                        <div class="product__category">
+                            {{ item.categoryName }}
+                        </div>
                         <div class="product__name">
                             <a href="{{ path('cofe',{slug: item.slug }) }}" target="_blank">{{ item.name }}</a>
                         </div>

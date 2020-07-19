@@ -51,6 +51,10 @@
     font-weight: bold;
     text-align: center;
 }
+.product__category {
+    font-weight: bold;
+    text-align: center;
+}
 .product__price {
     color: #1376ba;
     font-size: 20px;

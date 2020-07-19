@@ -9,6 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Cofe
 {
+    public const CATEGORIES = [
+        1 => 'Кофе в зернах',
+        2 => 'Кофе в капсулах',
+    ];
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -40,6 +44,11 @@ class Cofe
      * @ORM\Column(type="text")
      */
     private $description;
+
+    /**
+     * @ORM\Column(type="integer",options={"default":1})
+     */
+    private $categoryId;
 
     public function getId(): ?int
     {
@@ -104,5 +113,31 @@ class Cofe
         $this->description = $description;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategoryId():?int
+    {
+        return $this->categoryId;
+    }
+
+    /**
+     * @param mixed $categoryId
+     * @return Cofe
+     */
+    public function setCategoryId($categoryId):self
+    {
+        $this->categoryId = $categoryId;
+        return $this;
+    }
+
+    public function getCategoryName():string
+    {
+        if (empty($this->categoryId)) {
+            return '';
+        }
+        return self::CATEGORIES[$this->categoryId]??'';
     }
 }
