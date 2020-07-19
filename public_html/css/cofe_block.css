@@ -67,3 +67,8 @@
     width: 98%;
     margin: 5px 1%;
 }
+.price_container{
+    font-size: 18px;
+    line-height: 22px;
+    padding: 7px 0;
+}

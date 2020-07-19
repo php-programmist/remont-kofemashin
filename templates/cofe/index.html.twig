@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Купить кофе {{ item.name }} по низкой цене в Москве - «Ремонт Кофемашин»{% endblock %}
-{% block description %}Купить кофе {{ item.name }} по низкой цене в Москве.{% endblock %}
-{% block h1 %}Купить кофе {{ item.name }} по низкой цене в Москве{% endblock %}
+{% block title %}Купить {{ item.categoryName }} {{ item.name }} для кофемашин по низкой цене в Москве{% endblock %}
+{% block description %}У нас вы можете купить {{ item.categoryName }} {{ item.name }} для кофемашин. ✅ Доставка по Москве. ✅ В розницу и оптом. 🔥 Премиальный кофе по доступной цене.{% endblock %}
+{% block h1 %}Купить {{ item.categoryName }} {{ item.name }} для кофемашин{% endblock %}
 
 {% block body %}
     <div class="cartochkabrenda">
@@ -13,8 +13,11 @@
                         <img src="{{ asset('img/cofe/'~item.image) }}" alt="{{ item.name }}">
                     </div>
                     <div class="col-lg-7  cartochkabrenda-text">
-                        <div class="zag2">{{ item.name }}</div>
+                        <div class="zag2">{{ item.categoryName }} {{ item.name }} Цена:</div>
                         {{ item.description|raw }}
+                        <div class="price_container">
+                            Стоимость {{ item.categoryName }} {{ item.name }} — {{ item.price }} ₽/КГ
+                        </div>
                         <button class="btn btn-vizovbespldiagn zakzv-btn">Заказать</button>
                         <button class="btn btn-vizovbespldiagn zakzv-btn">Получить консультацию</button>
                     </div>
