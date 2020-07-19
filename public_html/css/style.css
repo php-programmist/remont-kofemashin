@@ -843,3 +843,52 @@ input:hover {
 .btn-success:hover{
   background-color: #7e472f;
 }
+
+.cofe_block .slick-slider .slick-arrow {
+  position: absolute;
+  right: 0px;
+  top: -60px;
+  height: 0.5px;
+  font-size: 0.1px;
+  width: 0.5px;
+}
+.cofe_block .slick-slider .slick-next:before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: url(../img/str.png) center no-repeat;
+  background-size: cover;
+  top: 0;
+  right: 0px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.cofe_block .slick-slider .slick-next:hover:before {
+  background: url(../img/str2.png) center no-repeat;
+}
+.cofe_block .slick-slider .slick-prev:before {
+  content: '';
+  font-size: 28px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: url(../img/str.png) center no-repeat;
+  background-size: cover;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  top: 0;
+  right: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.cofe_block .slick-slider .slick-prev:hover:before {
+  background: url(../img/str2.png) center no-repeat;
+}
+.cofe_block .slick-track {
+  display: flex!important;
+}
+.cofe_block .slick-track .slick-slide {
+  display: flex!important;
+  height: auto;
+}
