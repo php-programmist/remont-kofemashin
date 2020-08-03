@@ -16,7 +16,7 @@
                         <div class="zag2">{{ item.categoryName }} {{ item.name }} Цена:</div>
                         {{ item.description|raw }}
                         <div class="price_container">
-                            Стоимость {{ item.categoryName }} {{ item.name }} — {{ item.price }} ₽/КГ
+                            Стоимость {{ item.categoryName }} {{ item.name }} — {{ item.price }} ₽/{{ item.categoryId == 1 ? 'КГ':'Капсула'}}
                         </div>
                         <button class="btn btn-vizovbespldiagn zakzv-btn">Заказать</button>
                         <button class="btn btn-vizovbespldiagn zakzv-btn">Получить консультацию</button>
