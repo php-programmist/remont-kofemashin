@@ -7,6 +7,7 @@
     height: 60px;
     -webkit-animation: whatsapp 4s ease-in-out infinite running;
     animation: whatsapp 4s ease-in-out infinite running;
+    display: none;
 }
 .wapopup:hover {
     -webkit-animation-play-state: paused;
@@ -53,7 +54,11 @@
 .wapopup__content__text span {
     color: #77c938;
 }
-
+@media (max-width: 576px) {
+    .wapopup {
+        display: block;
+    }
+}
 @-webkit-keyframes whatsapp {
     0% {
         -webkit-transform: rotate(0deg);
