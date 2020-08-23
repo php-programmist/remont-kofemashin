@@ -5,8 +5,9 @@
 {% block h1 %}{{ type.metaTitle }}{% endblock %}
 
 {% block body %}
-{{ include('modules/type/_product_card.html.twig') }}
-{{ include('modules/type/_services.html.twig') }}
-{{ include('modules/_advantages.html.twig') }}
-{{ include('modules/_calc_price_modal_window.html.twig') }}
+    {{ include('modules/type/_product_card.html.twig') }}
+    {{ include('modules/rating.html.twig',{ 'page': type }) }}
+    {{ include('modules/type/_services.html.twig') }}
+    {{ include('modules/_advantages.html.twig') }}
+    {{ include('modules/_calc_price_modal_window.html.twig') }}
 {% endblock %}

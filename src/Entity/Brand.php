@@ -11,6 +11,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Brand
 {
+    use Traits\RatingTrait;
+    const MIN_RATING_VALUE = 4.6;
+    const MAX_RATING_VALUE = 4.9;
+    const MIN_RATING_COUNT = 7;
+    const MAX_RATING_COUNT = 22;
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

@@ -22,12 +22,15 @@
         <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/cofe_block.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/rating.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/rating_schema.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/stars.css') }}">
         <link rel="stylesheet" href="{{ asset('css/media.css') }}">
     {% endblock %}
     {{ include('modules/scripts/_ymetrics.html.twig') }}
 </head>
 
-<body>
+<body itemscope="itemscope" itemtype="https://schema.org/Product">
 {{ include('modules/_navigation.html.twig') }}
 
 <!--первый блок со слайдером-->
@@ -46,7 +49,7 @@
 
                 </div>
                 <div class="zag">
-                    <h1>{% block h1 %}Ремонт кофемашин в Москве{% endblock %}</h1>
+                    <h1 itemprop="name">{% block h1 %}Ремонт кофемашин в Москве{% endblock %}</h1>
                 </div>
                 <div class="offer">
                     <div><span><img src="{{ asset('img/zernushko.png') }}" alt="*"> Бесплатный выезд и диагностика кофемашины.</span>

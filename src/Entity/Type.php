@@ -9,6 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Type
 {
+    use Traits\RatingTrait;
+    const MIN_RATING_VALUE = 4.6;
+    const MAX_RATING_VALUE = 4.9;
+    const MIN_RATING_COUNT = 7;
+    const MAX_RATING_COUNT = 22;
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -51,7 +56,12 @@ class Type
      * @ORM\Column(type="text", nullable=true)
      */
     private $text;
-    
+
+    public function __construct()
+    {
+        $this->setRandomRatingValue();
+        $this->setRandomRatingCount();
+    }
 
     public function getId(): ?int
     {
