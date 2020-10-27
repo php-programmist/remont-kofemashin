@@ -17,4 +17,5 @@ return [
     Sonata\AdminBundle\SonataAdminBundle::class => ['all' => true],
     Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle::class => ['all' => true],
     Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle::class => ['all' => true],
+    PhpProgrammist\YandexTurboRssGeneratorBundle\YandexTurboRssGeneratorBundle::class => ['all' => true],
 ];

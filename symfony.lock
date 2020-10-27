@@ -126,6 +126,9 @@
     "php": {
         "version": "7.3"
     },
+    "php-programmist/yandex-turbo-rss-generator-bundle": {
+        "version": "v1.0.1"
+    },
     "phpoffice/phpspreadsheet": {
         "version": "1.8.2"
     },
