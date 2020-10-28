@@ -2,24 +2,26 @@
 
 namespace App\Entity\Traits;
 
+use DateTimeImmutable;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 
 trait ModifyDateTrait
 {
     /**
-     * @var \DateTimeImmutable
+     * @var DateTimeImmutable
      *
-     * @ORM\Column(name="modify_date", type="datetime")
+     * @ORM\Column(name="modify_date", type="datetime", options={"default": "CURRENT_TIMESTAMP"})
      */
     private $modifyDate;
     
-    public function getModifyDate(): ?\DateTimeInterface
+    public function getModifyDate(): ?DateTimeInterface
     {
         return $this->modifyDate;
     }
     
-    public function setModifyDate(?\DateTimeInterface $modifyDate): self
+    public function setModifyDate(?DateTimeInterface $modifyDate): self
     {
         $this->modifyDate = $modifyDate;
         
@@ -32,6 +34,6 @@ trait ModifyDateTrait
      */
     public function changeModifyDate()
     {
-        $this->modifyDate = new \DateTimeImmutable();
+        $this->modifyDate = new DateTimeImmutable();
     }
 }

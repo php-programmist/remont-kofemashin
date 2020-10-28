@@ -1,0 +1,38 @@
+<h2>ЦЕНЫ ПО НЕИСПРАВНОСТЯМ КОФЕМАШИНЫ {{ page.name }}</h2>
+<div class="breakdowns">
+    {% for breakdown in breakdowns %}
+      <div class="row">
+          {{ breakdown.name }}
+          от {{ breakdown.price }}&#8381
+
+          <button
+                  formaction="tel:{{ phone }}"
+                  data-background-color="brown"
+                  data-color="white"
+                  data-turbo="false"
+                  data-primary="true"
+          >
+              Заказать
+          </button>
+      </div>
+    {% endfor %}
+</div>
+<h2>ЦЕНЫ НА РЕМОНТ КОФЕМАШИНЫ {{ page.name }}</h2>
+<div class="breakdowns">
+    {% for service in services %}
+      <div class="row">
+          {{ service.name }}
+          от {{ service.price }}&#8381
+
+          <button
+                  formaction="tel:{{ phone }}"
+                  data-background-color="brown"
+                  data-color="white"
+                  data-turbo="false"
+                  data-primary="true"
+          >
+              Заказать
+          </button>
+      </div>
+    {% endfor %}
+</div>

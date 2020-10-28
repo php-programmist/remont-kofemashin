@@ -2,7 +2,7 @@
 
 {% block title %}Ремонт кофемашин {{ brand.name }} по низкой цене в Москве - «Ремонт Кофемашин»{% endblock %}
 {% block description %}Ремонт кофемашин {{ brand.name }}.{% endblock %}
-{% block h1 %}Ремонт кофемашин {{ brand.name }} в Москве{% endblock %}
+{% block h1 %}{{ brand.h1 }}{% endblock %}
 
 {% block body %}
 {{ include('modules/brand/_product_card.html.twig') }}

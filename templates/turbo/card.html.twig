@@ -1,0 +1,5 @@
+<div class="card">
+    <h2>{{ page.cardHeader }}</h2>
+    <img src="{{ app.request.schemeAndHttpHost }}{{ page.cardImage }}" alt="*">
+    {{ page.textComputed|raw }}
+</div>

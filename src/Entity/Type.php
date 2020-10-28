@@ -2,14 +2,16 @@
 
 namespace App\Entity;
 
+use App\Entity\Contracts\PageInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TypeRepository")
  */
-class Type
+class Type implements PageInterface
 {
     use Traits\RatingTrait;
+    use Traits\ModifyDateTrait;
     const MIN_RATING_VALUE = 4.6;
     const MAX_RATING_VALUE = 4.9;
     const MIN_RATING_COUNT = 7;
@@ -151,5 +153,37 @@ class Type
         $this->text = $text;
 
         return $this;
+    }
+
+    public function getPath():string
+    {
+        return sprintf('/type-%s/', $this->getAlias());
+    }
+
+    public function getH1():string
+    {
+        return $this->getMetaTitle();
+    }
+
+    public function getCardHeader():string
+    {
+        return $this->getMetaTitle();
+    }
+
+    public function getCardImage():string
+    {
+        return sprintf('/img/type_images/%s', $this->getImage());
+    }
+
+    public function getTextComputed():string
+    {
+        return sprintf('<p>«Ремонт Кофемашин» - сервис по ремонту и обслуживает %s в Москве. В нашей сервисной мастерской работают профессионалы своего дела с огромным опытом работы. Имеется все необходимое оборудование и инструменты. Запчасти и расходные материалы для ремонта %s уже есть в наличии. Выезд мастера, диагностика и забор кофемашины в сервис бесплатный!</p>
+                    
+                        <p>&#9989; Бесплатная доставка до сервиса.</p>
+                        <p>&#9989; Гарантия на %s от 6 месяцев.</p>
+                        <p>&#9989; Ремонтируем только то, что действительно сломалось!</p>
+                   
+                    <p class="price"><b>%s от 450₽</b></p>',
+            $this->getName(), $this->getName(),$this->getMetaTitle(), $this->getMetaTitle());
     }
 }

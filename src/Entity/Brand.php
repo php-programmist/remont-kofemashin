@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Contracts\PageInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -9,9 +10,11 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BrandRepository")
  */
-class Brand
+class Brand implements PageInterface
 {
     use Traits\RatingTrait;
+    use Traits\ModifyDateTrait;
+
     const MIN_RATING_VALUE = 4.6;
     const MAX_RATING_VALUE = 4.9;
     const MIN_RATING_COUNT = 7;
@@ -220,5 +223,40 @@ class Brand
         $this->text = $text;
 
         return $this;
+    }
+
+    public function getPath(): string
+    {
+        return sprintf('/remont-kofemashin-%s/', $this->getAlias());
+    }
+
+    public function getH1(): string
+    {
+        return sprintf('Ремонт кофемашин %s в Москве', $this->getName());
+    }
+
+    public function getCardHeader(): string
+    {
+        return sprintf('Ремонт кофемашины %s', $this->getName());
+    }
+
+    public function getCardImage(): string
+    {
+        return sprintf('/img/brand_image/%s', $this->getImage());
+    }
+
+    public function getTextComputed(): string
+    {
+        if (null !== $this->getText()) {
+            return $this->getText();
+        }
+        return sprintf('<p>«Ремонт Кофемашин» - сервис по ремонту и обслуживанию кофемашин %s в Москве. В нашей сервисной мастерской работают профессионалы своего дела с огромным опытом работы. Имеется все необходимое оборудование и инструменты. Запчасти и расходные материалы для ремонта кофемашины %s уже есть в наличии. Выезд мастера, диагностика и забор кофемашины в сервис бесплатный!</p>
+                    
+                        <p>&#9989; Бесплатная доставка до сервиса.</p>
+                        <p>&#9989; Гарантия на ремонт кофемашин %s от 6 месяцев.</p>
+                        <p>&#9989; Ремонтируем только то, что действительно сломалось!</p>
+                    
+                    <p class="price"><b>Ремонт кофемашины %s от 450₽</b></p>',
+            $this->getName(), $this->getName(), $this->getName(), $this->getName());
     }
 }

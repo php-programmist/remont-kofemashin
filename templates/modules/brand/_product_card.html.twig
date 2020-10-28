@@ -3,10 +3,10 @@
         <div class="cartochkabrenda-container">
             <div class="row">
                 <div class="col-lg-5  cartochkabrenda-img">
-                    <img src="{{ asset('img/brand_image/'~brand.image) }}" alt="{{ brand.name }}">
+                    <img src="{{ brand.cardImage }}" alt="{{ brand.name }}">
                 </div>
                 <div class="col-lg-7  cartochkabrenda-text">
-                    <div class="zag2">Ремонт кофемашины {{ brand.name }}{{ model.name is defined ?' '~model.name }}</div>
+                    <div class="zag2">{{ brand.cardHeader }}{{ model.name is defined ?' '~model.name }}</div>
                     <p>«Ремонт Кофемашин» - сервис по ремонту и обслуживанию кофемашин {{ brand.name }}{{ model.name is defined ?' '~model.name }} в Москве. В нашей сервисной мастерской работают профессионалы своего дела с огромным опытом работы. Имеется все необходимое оборудование и инструменты. Запчасти и расходные материалы для ремонта кофемашины {{ brand.name }}{{ model.name is defined ?' '~model.name }} уже есть в наличии. Выезд мастера, диагностика и забор кофемашины в сервис бесплатный!</p>
                     <ul>
                         <li>✅ Бесплатная доставка до сервиса.</li>
