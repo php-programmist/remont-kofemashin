@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Entity\Contracts\PageInterface;
+use App\Entity\Contracts\TurboPageInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TypeRepository")
  */
-class Type implements PageInterface
+class Type implements TurboPageInterface
 {
     use Traits\RatingTrait;
     use Traits\ModifyDateTrait;

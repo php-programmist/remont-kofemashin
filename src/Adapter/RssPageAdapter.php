@@ -3,7 +3,7 @@
 namespace App\Adapter;
 
 use App\Entity\Brand;
-use App\Entity\Contracts\PageInterface;
+use App\Entity\Contracts\TurboPageInterface;
 use App\Repository\ServiceRepository;
 use PhpProgrammist\YandexTurboRssGeneratorBundle\Adapters\BasePageInterface;
 use PhpProgrammist\YandexTurboRssGeneratorBundle\Adapters\RssAdapterInterface;
@@ -55,7 +55,7 @@ class RssPageAdapter implements RssAdapterInterface
 
     protected function adapt(): void
     {
-        /** @var PageInterface $originalItem */
+        /** @var TurboPageInterface $originalItem */
         foreach ($this->originalItems as $originalItem) {
             $link = $originalItem->getPath();
             $item = new RssItem(
@@ -70,7 +70,7 @@ class RssPageAdapter implements RssAdapterInterface
         }
     }
 
-    private function getText(PageInterface $page): string
+    private function getText(TurboPageInterface $page): string
     {
         $breakdowns = $this->serviceRepository->findAllButExcluded([29, 30], false);
         $services   = $this->serviceRepository->findAllButExcluded([29, 30], true);

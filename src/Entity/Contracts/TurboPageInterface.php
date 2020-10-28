@@ -4,7 +4,7 @@ namespace App\Entity\Contracts;
 
 use DateTimeInterface;
 
-interface PageInterface
+interface TurboPageInterface
 {
     public function getPath():string;
 
